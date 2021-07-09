@@ -6,3 +6,6 @@ npm install && npm run dev
 php artisan make:migration create_products_table --create=products
 
 php artisan make:controller Test --resource
+
+Installing Helpers
+composer require laravel/Helpers

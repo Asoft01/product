@@ -32,14 +32,17 @@
             <tr>
                     <td>{{ $pro->product_name }}</td>
                     <td>{{ $pro->product_code }}</td>
-                    <td>{{ $pro->details }}</td>
+                    <td>
+                        {{ str_limit($pro->details, $limit=70) }} 
+                    </td>
                     <td><img src="{{ URL::to($pro->logo) }}" height="70px" width="80px" alt=""></td>
                     <td>
-                        <a class="btn btn-info" href="">Show</a>
+                        <a class="btn btn-info" href="{{ URL::to('show/product/'.$pro->id) }}">Show</a>
                         <a class="btn btn-primary" href="{{ URL::to('edit/product/'.$pro->id) }}">Edit</a>
-                        <a class="btn btn-danger" href="">Delete</a>
+                        <a class="btn btn-danger" href="{{ URL::to('delete/product/'.$pro->id) }}" onclick="return confirm('Are you sure?')">Delete</a>
                     </td>
             </tr>
         @endforeach
     </table>
+    {{ $product->links() }}
 @endsection
