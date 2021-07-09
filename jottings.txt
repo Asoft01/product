@@ -1,0 +1,8 @@
+composer require laravel/ui ^2.0.1
+php artisan ui vue --auth
+
+npm install && npm run dev
+
+php artisan make:migration create_products_table --create=products
+
+php artisan make:controller Test --resource
